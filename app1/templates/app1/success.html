@@ -1,0 +1,25 @@
+{% extends 'app1/base.html' %}
+{% block content %}
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    {% load static %}
+      <link rel="stylesheet" href="{% static 'app1/css/signup_signin.css' %}">
+
+  </head>
+  <body>
+
+      {% csrf_token %}
+    <!--h1>  {{user}} successful login! {{id}} </h1-->
+    <h1>  {{user}} successful login!  </h1>
+
+    </form>
+  </body>
+</html>
+
+
+
+
+{% endblock %}

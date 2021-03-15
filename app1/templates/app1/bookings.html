@@ -1,0 +1,52 @@
+{% extends 'app1/base.html' %}
+{% block content %}
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    {% load static %}
+      <link rel="stylesheet" href="{% static 'app1/css/list.css' %}">
+  </head>
+  <body>
+
+
+        <div class="res-tab">
+          {% csrf_token %}
+        <h2> {{user}} Your booking has been confirmed!</h2>
+        <h2>Thank you!</h2>
+        <table>
+                        <thead>
+                          <td>Bus name</td>
+                          <td>Starting point</td>
+                          <td>Destination point</td>
+                          <td>Number of seats</td>
+                          <td>Price</td>
+                          <td>Cost</td>
+                          <td>Date</td>
+                          <td>Time</td>
+                        </thead>
+
+                        <tr>
+                          <td>{{book.bus_name}}</td>
+                          <td>{{book.source}}</td>
+                          <td>{{book.dest}}</td>
+                          <td>{{book.nos}}</td>
+                          <td>{{book.price}}</td>
+                          <td>{{cost}}</td>
+                          <td>{{book.date}}</td>
+                          <td>{{book.time}}</td>
+                        </tr>
+        </table>
+<br>
+    <form action="{% url 'home' %}" method="post">
+      {% csrf_token %}
+                          <center><button type="submit" >OK</button></center>
+    </div>
+  </body>
+</html>
+
+
+
+
+{% endblock %}

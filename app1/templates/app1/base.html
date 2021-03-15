@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <title>Home</title>
+  <title></title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'app1/css/style.css' %}">
+</head>
+<body>
+  <header>
+    <div class="main">
+      <ul>
+          <li><a href="{% url 'home' %}">Home </a></li>
+        <!--  <li><a href="{% url 'services' %}">Services</a></li>
+                     <li><a href="{% url 'gallery' %}">Gallery</a></li>
+                     <li><a href="{% url 'about' %}">About</a></li>
+                     <li><a href="{% url 'contact' %}">Contact</a></li>-->
+          <li><a href="{% url 'search_bus' %}">Search Bus</a></li>
+          <li><a href="{% url 'seebookings' %}">See Bookings</a></li>
+          {% if request.user.is_active %}
+          <li><a href="{% url 'signout' %}">Sign out</a></li>
+          {% else %}
+          <li><a  href="{% url 'signup' %}">Sign Up</a></li>
+          {% endif %}
+
+        </ul>
+  </div>
+    </header>
+
+{% block content %}
+{% endblock %}
+
+
+
+</body>
+</html>

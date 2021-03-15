@@ -1,0 +1,10 @@
+insert into app1_bus (bus_name, source, dest, nos, rem, price, date, time)  values ('Siddhi vinayak travels', 'pune', 'bhopal', 30, 30, 1000, '2021-03-21', '16:00');
+insert into app1_bus (bus_name, source, dest, nos, rem, price, date, time)  values ('Hans Travels', 'pune', 'bhopal', 30, 30, 1200, '2021-03-21', '16:00');
+insert into app1_bus (bus_name, source, dest, nos, rem, price, date, time)  values ('Verma travels', 'pune', 'bhopal', 30, 30, 1400, '2021-03-21', '16:00');
+insert into app1_bus (bus_name, source, dest, nos, rem, price, date, time)  values ('chartred', 'pune', 'bhopal', 30, 30, 1000, '2021-03-21', '16:00');
+insert into app1_bus (bus_name, source, dest, nos, rem, price, date, time)  values ('pawan travels', 'pune', 'bhopal', 30, 30, 1600, '2021-03-21', '16:00');
+insert into app1_bus (bus_name, source, dest, nos, rem, price, date, time)  values ('Shyam travels', 'pune', 'bhopal', 30, 30, 1000, '2021-03-21', '16:00');
+insert into app1_bus (bus_name, source, dest, nos, rem, price, date, time)  values ('hari travels', 'pune', 'bhopal', 30, 30, 1300, '2021-03-21', '16:00');
+insert into app1_bus (bus_name, source, dest, nos, rem, price, date, time)  values ('vip travels', 'pune', 'bhopal', 30, 30, 1100, '2021-03-21', '16:00');
+insert into app1_bus (bus_name, source, dest, nos, rem, price, date, time)  values ('raj ratan travels', 'bhopal', 'pune', 30, 30, 1200, '2021-03-21', '16:00');
+insert into app1_bus (bus_name, source, dest, nos, rem, price, date, time)  values ('Shiv sai', 'pune', 'bhopal', 30, 30, 1000, '2021-03-21', '16:00');

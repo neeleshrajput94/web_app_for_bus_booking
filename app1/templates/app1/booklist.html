@@ -1,0 +1,70 @@
+{% extends 'app1/base.html' %}
+{% block content %}
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    {% load static %}
+      <link rel="stylesheet" href="{% static 'app1/css/style.css' %}">
+      <link rel="stylesheet" href="{% static 'app1/css/list.css' %}">
+
+  </head>
+  <body>
+    <div class="res-tab">
+    <h3>{{msg}}</h3>
+    <h2>List of buses</h2>
+    <table>
+        <thead>
+        <td>BOOKING ID</td>
+        <td>USER NAME</td>
+        <td>BUS NAME</td>
+        <td>SOURCE</td>
+        <td>DESTINATION</td>
+        <td>NUM OF SEATS</td>
+        <td>PRICE</td>
+        <td>DATE</td>
+        <td>TIME</td>
+        <td>STATUS</td>
+
+
+        </thead>
+
+        {% for row in book_list %}
+        <tr>
+            <td>{{row.id}}</td>
+            <td>{{row.name}}</td>
+            <td>{{row.bus_name}}</td>
+            <td>{{row.source}}</td>
+            <td>{{row.dest}}</td>
+            <td>{{row.nos}}</td>
+            <td>{{row.price}}</td>
+            <td>{{row.date}}</td>
+            <td>{{row.time}}</td>
+            <td>{{row.status}}</td>
+
+
+        </tr>
+        {% endfor %}
+    </table>
+    </div>
+    <br><br>
+    <form action="{% url 'cancellings' %}" method="post">
+        <h2>Choose booking id to Cancel</h2>
+        {% csrf_token %}
+      <center>      <label >Bus ID</label>
+                <input name='bus_id'  type="number">
+
+        <br>
+        <br>
+            <button type="submit" >Cancel bus</button></center>
+
+
+        {{error}}
+
+    </form>
+  </body>
+</html>
+
+
+{% endblock %}

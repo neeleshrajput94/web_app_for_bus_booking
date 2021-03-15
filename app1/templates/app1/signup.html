@@ -1,0 +1,44 @@
+{% extends 'app1/base.html' %}
+{% block content %}
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    {% load static %}
+      <link rel="stylesheet" href="{% static 'app1/css/signup_signin.css' %}">
+
+
+  </head>
+  <body>
+<div class="wrap">
+    <form action="{% url 'signup' %}" method="post">
+        <h2>Sign up Here !</h2>
+
+        {% csrf_token %}
+       <input name='name'  type="text" placeholder="username" required>
+
+       <input name='email' type="text" placeholder="email" id="example-email-input" required>
+
+    <input type="password" name="password"  placeholder="password" required>
+    <input type="password" name="confirm_password"  placeholder="confirm password" required>
+    
+    <br>
+        <center><button type="submit" type="submit">Sign up</button></center>
+        <br>
+
+        {% if messages %}
+        {% for message in messages %}
+        <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+        {% endfor %}
+        {% endif %}
+        <h3><a href={% url 'signin' %}>click here</a> for login</h3>
+      </form>
+</div>
+
+  </body>
+</html>
+
+
+
+{% endblock %}

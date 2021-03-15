@@ -1,0 +1,39 @@
+{% extends 'app1/base.html' %}
+{% block content %}
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    {% load static %}
+      <link rel="stylesheet" href="{% static 'app1/css/signup_signin.css' %}">
+
+  </head>
+  <body>
+<div class="wrap">
+    <h2>Search bus</h2>
+    <br>
+    <form action="{% url 'search_bus' %}" method="post">
+        {% csrf_token %}
+
+                <input name='source'  type="text" placeholder="from" required>
+
+
+                <input name='destination'  type="text" placeholder="to" required>
+
+            <br>
+            <br>
+                <input name='date'  type="date" required>
+                <br>
+                <br>
+            <center><button type="submit" >Search bus</button></center>
+            <br>
+      <li>  {{error}} </li>
+
+    </form>
+</div>
+  </body>
+</html>
+
+
+{% endblock %}

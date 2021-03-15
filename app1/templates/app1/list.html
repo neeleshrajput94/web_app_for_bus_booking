@@ -1,0 +1,68 @@
+{% extends 'app1/base.html' %}
+{% block content %}
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    {% load static %}
+      <link rel="stylesheet" href="{% static 'app1/css/list.css' %}">
+      <link rel="stylesheet" href="{% static 'app1/css/style.css' %}">
+  </head>
+  <body>
+    <div class="res-tab">
+
+    <h2>List of buses</h2>
+    <table class="table-sortable", border="2">
+        <thead>
+        <th>ID</th>
+        <th>NAME</th>
+        <th>SOURCE</th>
+        <th>DESTINATION</th>
+        <th>NUM OF SEATS</th>
+        <th>NUM OF SEATS REM</th>
+        <th>PRICE</th>
+        <th>DATE</th>
+        <th>TIME</th>
+
+        </thead>
+        <tbody>
+
+        {% for row in bus_list %}
+        <tr>
+            <td>{{row.id }}</td>
+            <td>{{row.bus_name}}</td>
+            <td>{{row.source}}</td>
+            <td>{{row.dest}}</td>
+            <td>{{row.nos}}</td>
+            <td>{{row.rem}}</td>
+            <td>{{row.price}}</td>
+            <td>{{row.date}}</td>
+            <td>{{row.time}}</td>
+          </tr>
+        {% endfor %}
+    </tbody>
+    </table>
+  </div>
+
+  <br><br>
+  <form action="{% url 'bookings' %}" method="post">
+    <h2>Choose bus to book</h2>
+    {% csrf_token %}
+    <center>    <label >Bus ID</label>
+            <input name='bus_id'  type="number" >
+        <label >Number of seats</label>
+            <input name='no_seats' type="number">
+    <br>
+    <br>
+        <button type="submit" >Book bus</button>
+
+
+    {{error}}</center>
+
+</form>
+
+  </body>
+  <script src="{% static 'app1/js/list.js' %}"></script>
+</html>
+{% endblock %}
