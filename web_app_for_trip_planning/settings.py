@@ -131,6 +131,7 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
+# added manually to add static folder in project
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'statics')
 ]
