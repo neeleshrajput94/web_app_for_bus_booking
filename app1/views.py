@@ -46,7 +46,10 @@ def signup(request):
         password_r = request.POST.get('password')
         if not EMAIL_REGIX.match(request.POST["email"]):
             messages.add_message(request, messages.ERROR, "invalid email fromat! ex: test@test.com")
-            return render(request, 'app1/signup.html', context)        
+            return render(request, 'app1/signup.html', context)     
+        if User.objects.filter(username=request.POST["name"]).count() > 0:
+            messages.add_message(request, messages.ERROR, "A user with this name already exixts!")
+            return render(request, 'app1/signup.html', context)   
         if User.objects.filter(email=request.POST["email"]).count() > 0:
             messages.add_message(request, messages.ERROR, "A user with this email already exixts!")
             return render(request, 'app1/signup.html', context)
